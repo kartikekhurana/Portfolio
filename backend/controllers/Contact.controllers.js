@@ -1,4 +1,4 @@
-import { sendGmail } from "../utils/sendGmail.js";
+import { gmail } from "../utils/gmail.js";
 
 const handleContactForm = async (req, res) => {
   const { name, email, phone, message } = req.body;
@@ -9,7 +9,7 @@ const handleContactForm = async (req, res) => {
     });
   }
   try {
-    await sendGmail({ name, email, message, phone });
+    await gmail({ name, email, message, phone });
     return res.status(200).json({
       success: true,
       message: "message sent successfullya",
