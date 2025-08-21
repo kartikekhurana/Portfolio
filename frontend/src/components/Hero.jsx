@@ -364,6 +364,22 @@ const Hero = () => {
                 <p className='text-gray-300 mt-2 text-sm'>
                  TaskArena is a sleek, real-time task management platform built with Next.js, WebSockets, and MongoDB. It empowers teams with live collaboration, comments, and notifications in a dark inspired UI.
                 </p>
+                 <div className='flex gap-3 mt-3'>
+                  <a
+                    href='https://task-arena-xu12.vercel.app/'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='text-blue-400 hover:underline text-sm'>
+                    🔗 Live Link
+                  </a>
+                  <a
+                    href='https://github.com/kartikekhurana/TaskArena'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='text-blue-400 hover:underline text-sm'>
+                    📂 View Code
+                  </a>
+                </div>
                 <div className='flex flex-wrap gap-2 mt-3 text-xs'>
                   <span className='bg-blue-600/20 text-blue-300 px-2 py-1 rounded-full'>
                     Next.js
