@@ -142,22 +142,13 @@ const Hero = () => {
 
       {/* Download Button */}
       <a
-        href="/Kartike_Resume.pdf"
+        href="resume.pdf"
         target="_blank"
         rel="noopener noreferrer"
         className="inline-block px-8 py-3 rounded-lg font-medium text-white bg-black border border-purple-500/30 hover:border-purple-500 transition-all duration-300 ease-in-out shadow-lg mb-8"
       >
         📄 Download Resume
       </a>
-
-      {/* Optional inline preview */}
-      <div className="rounded-lg overflow-hidden border border-white/10 shadow-lg">
-        <embed
-          src="/resume.pdf"
-          type="application/pdf"
-          className="w-full h-[500px] rounded-lg"
-        />
-      </div>
     </Tilt>
   </section>
 </motion.div>
