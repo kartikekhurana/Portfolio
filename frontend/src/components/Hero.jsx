@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
 import Tilt from "react-parallax-tilt";
 import {
   SiJavascript,
@@ -102,6 +101,65 @@ const Hero = () => {
           </Tilt>
         </section>
       </motion.div>
+      <motion.div
+  initial={{ y: 100, opacity: 0 }}
+  whileInView={{ y: 0, opacity: 1 }}
+  transition={{ duration: 1 }}
+  viewport={{ once: true }}
+>
+  <section
+    id="resume"
+    className="w-full bg-[#0a0a0a] text-white py-16 px-6 md:px-16 flex justify-center items-center"
+  >
+    <Tilt
+      glareEnable={false}
+      tiltMaxAngleX={15}
+      tiltMaxAngleY={15}
+      scale={1.05}
+      transitionSpeed={1000}
+      className="relative p-8 bg-[#111] border border-purple-500/30 hover:border-purple-400/60 backdrop-blur-sm shadow-2xl w-full max-w-4xl rounded-2xl text-center"
+      onMove={(e) => {
+        if (!e || !e.event || !e.event.currentTarget) return;
+        const bounds = e.event.currentTarget.getBoundingClientRect();
+        const x = e.event.clientX - bounds.left;
+        const y = e.event.clientY - bounds.top;
+        // glowing radial effect
+        e.event.currentTarget.style.background = `radial-gradient(600px at ${x}px ${y}px, rgba(168,85,247,0.15), transparent 80%)`;
+      }}
+      onLeave={(e) => {
+        if (e?.event?.currentTarget) {
+          e.event.currentTarget.style.background = "none";
+        }
+      }}
+    >
+      <h2 className="text-3xl md:text-5xl font-bold text-purple-400 mb-6">
+        Resume
+      </h2>
+      <p className="text-gray-300 text-md md:text-lg mb-6">
+        Explore my professional journey, skills, and achievements in detail.
+      </p>
+
+      {/* Download Button */}
+      <a
+        href="/Kartike_Resume.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block px-8 py-3 rounded-lg font-medium text-white bg-black border border-purple-500/30 hover:border-purple-500 transition-all duration-300 ease-in-out shadow-lg mb-8"
+      >
+        📄 Download Resume
+      </a>
+
+      {/* Optional inline preview */}
+      <div className="rounded-lg overflow-hidden border border-white/10 shadow-lg">
+        <embed
+          src="/resume.pdf"
+          type="application/pdf"
+          className="w-full h-[500px] rounded-lg"
+        />
+      </div>
+    </Tilt>
+  </section>
+</motion.div>
       {/* about me section */}
       <motion.div
         initial={{ y: 100, opacity: 0 }}
@@ -300,27 +358,28 @@ const Hero = () => {
                 }}
                 className='bg-[#1a1a1a] p-5 rounded-2xl border border-blue-500/10 hover:border-blue-400/40 backdrop-blur-md shadow-lg'>
                 <h3 className='text-xl font-semibold text-blue-400'>
-                  Ecommerce Website
+                  TaskArena
                 </h3>
-                <p className='text-gray-400 text-sm'>Oct 2024 - Dec 2024</p>
+                <p className='text-gray-400 text-sm'> July2025 - August2025</p>
                 <p className='text-gray-300 mt-2 text-sm'>
-                  Fully functioning e-commerce website with secure user auth,
-                  payment gateway, and more.
+                 TaskArena is a sleek, real-time task management platform built with Next.js, WebSockets, and MongoDB. It empowers teams with live collaboration, comments, and notifications in a dark inspired UI.
                 </p>
                 <div className='flex flex-wrap gap-2 mt-3 text-xs'>
                   <span className='bg-blue-600/20 text-blue-300 px-2 py-1 rounded-full'>
-                    React
+                    Next.js
                   </span>
                   <span className='bg-blue-600/20 text-blue-300 px-2 py-1 rounded-full'>
-                    Node.js
+                    TypeScript
                   </span>
                   <span className='bg-blue-600/20 text-blue-300 px-2 py-1 rounded-full'>
-                    MongoDB
+                    WebSockets
                   </span>
                 </div>
-                <div className='mt-4 w-full h-48 rounded-lg bg-gradient-to-br from-blue-800 to-blue-600 flex items-center justify-center text-blue-300 text-sm border border-white/30'>
-                  📸 Screenshot not available
-                </div>
+                <img
+                    src='/TaskArena.png'
+                    alt='TaskArena Screenshot'
+                    className='rounded-lg shadow-md border border-white/10 hover:scale-105 transition duration-300'
+                  />
               </Tilt>
 
               <Tilt
